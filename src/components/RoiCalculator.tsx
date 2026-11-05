@@ -49,10 +49,10 @@ export const RoiCalculator: React.FC<RoiCalculatorProps> = ({ onOpenDemo }) => {
             <span>Calculadora de Retorno de Inversión (ROI)</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Calcula el Ahorro Operativo para Tu Empresa
+            Calcula tu Ahorro con By SEQ
           </h2>
-          <p className="text-zinc-400 text-base sm:text-lg mt-4 leading-relaxed">
-            Estima cuántas horas de supervisión en campo, costos por retrasos y penalizaciones evitarás cada mes al desplegar agentes de IA en tus obras y servicios de mantenimiento.
+          <p className="text-zinc-400 text-sm sm:text-base mt-3">
+            Estima las horas de supervisión en campo y los costos por retrasos que evitarás cada mes.
           </p>
         </div>
 

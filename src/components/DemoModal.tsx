@@ -21,7 +21,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({
   onClose,
   onOpenReportModal
 }) => {
-  const [companyName, setCompanyName] = useState(initialData?.company || 'Software Enterprise Quality (SEQ)');
+  const [companyName, setCompanyName] = useState(initialData?.company || 'By SEQ');
   const [contactName, setContactName] = useState('Director de Operaciones');
   const [email, setEmail] = useState('contacto@sequality.com');
   const [contractorType, setContractorType] = useState('commercial_facility');
@@ -65,7 +65,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({
             </div>
             <div>
               <div className="text-xs font-mono text-zinc-400 uppercase">
-                Software Enterprise Quality (SEQ)
+                By SEQ AI Cloud
               </div>
               <div className="text-sm font-bold text-white">
                 Solicitar Demostración de Agente

@@ -89,7 +89,7 @@ export const ReportModal: React.FC<ReportModalProps> = ({ projectName, onClose }
                 SOFTWARE ENTERPRISE QUALITY (SEQ)
               </div>
               <div className="text-xs text-zinc-400 mt-0.5">
-                ConstrucPod AI · Plataforma de Control de Obras y Facility Services
+                By SEQ · Plataforma de Control de Obras y Facility Services
               </div>
               <div className="text-xs text-violet-400 font-mono mt-1">
                 Proyecto: <strong className="text-white">{projectName}</strong>
@@ -199,7 +199,7 @@ export const ReportModal: React.FC<ReportModalProps> = ({ projectName, onClose }
           {/* Signature Block */}
           <div className="pt-4 border-t border-zinc-800 flex items-center justify-between text-[11px] font-mono text-zinc-400">
             <div>
-              Firmado digitalmente: <strong className="text-zinc-200">ConstrucPod AI · Software Enterprise Quality (SEQ)</strong>
+              Firmado digitalmente: <strong className="text-zinc-200">By SEQ · Software Enterprise Quality</strong>
             </div>
             <div>
               Hash: <span className="text-violet-400 font-mono">0x7f4a...9b12</span>

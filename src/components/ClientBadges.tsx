@@ -5,18 +5,18 @@ import { Award, Building } from 'lucide-react';
 
 export const ClientBadges: React.FC = () => {
   return (
-    <section className="py-10 bg-[#090B10] border-b border-zinc-800/80">
+    <section className="py-16 bg-[#090B10] border-b border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Intro */}
-        <div className="text-center mb-6">
+        <div className="text-center mb-8">
           <p className="text-xs font-mono uppercase tracking-wider text-zinc-400">
-            Tecnología desarrollada por Software Enterprise Quality (SEQ)
+            Tecnología desarrollada By SEQ · Software Enterprise Quality
           </p>
         </div>
 
         {/* Featured Enterprise Banner */}
-        <div className="p-6 rounded-2xl bg-gradient-to-r from-zinc-900/90 via-[#101420]/80 to-zinc-900/90 border border-violet-500/30 shadow-[0_0_30px_rgba(139,92,246,0.1)] mb-8">
+        <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-zinc-900/90 via-[#101420]/80 to-zinc-900/90 border border-violet-500/30 shadow-[0_0_30px_rgba(139,92,246,0.1)] mb-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-xl bg-violet-600/20 border border-violet-500/40 flex items-center justify-center shrink-0">
@@ -24,16 +24,16 @@ export const ClientBadges: React.FC = () => {
               </div>
               <div>
                 <div className="flex flex-wrap items-center gap-2">
-                  <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
-                    Software Enterprise Quality (SEQ)
+                  <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight font-mono">
+                    By <span className="text-violet-400">SEQ</span>
                   </h3>
-                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-violet-500/10 border border-violet-500/30 text-violet-300 text-xs font-semibold">
+                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-violet-500/10 border border-violet-500/30 text-violet-300 text-xs font-semibold">
                     <Award className="w-3.5 h-3.5 text-violet-400" />
-                    Plataforma Enterprise
+                    Software Enterprise Quality
                   </span>
                 </div>
                 <p className="text-xs sm:text-sm text-zinc-400 mt-1 max-w-xl leading-relaxed">
-                  Soluciones de software de alta calidad para la digitalización integral de obras, mantenimiento de infraestructura y operaciones en campo.
+                  Digitalización integral de obras, mantenimiento de infraestructura y telemetría de operaciones en campo.
                 </p>
               </div>
             </div>

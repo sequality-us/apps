@@ -88,7 +88,7 @@ export default function App() {
           onOpenReportModal={handleOpenReportModal}
         />
 
-        {/* Performance Comparison: ConstrucPod vs Legacy Methods */}
+        {/* Performance Comparison: By SEQ vs Legacy Methods */}
         <ComparisonTable 
           onOpenDemo={handleOpenDemo}
         />

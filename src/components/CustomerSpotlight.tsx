@@ -57,14 +57,14 @@ export const CustomerSpotlight: React.FC<CustomerSpotlightProps> = ({
               </h3>
 
               <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
-                En proyectos simultáneos de remodelación, climatización HVAC y mantenimiento de instalaciones, coordinar cuadrillas y evitar demoras de materiales solía consumir horas de gestión manual. La implementación de ConstrucPod AI automatizó las bitácoras diarias y la detección de interferencias.
+                En proyectos simultáneos de remodelación, climatización HVAC y mantenimiento de instalaciones, coordinar cuadrillas y evitar demoras solía consumir horas de gestión manual. La implementación de By SEQ automatizó las bitácoras diarias y la detección de interferencias.
               </p>
 
               {/* Quote Block */}
               <div className="p-4 rounded-xl bg-zinc-900/70 border border-zinc-800 relative">
                 <Quote className="w-6 h-6 text-violet-500/30 absolute top-3 right-3" />
                 <p className="text-xs sm:text-sm text-zinc-200 italic leading-relaxed">
-                  "ConstrucPod AI transformó nuestras mañanas de obra. En lugar de horas al teléfono coordinando proveedores y llenando bitácoras, los agentes nos alertan temprano sobre cualquier conflicto de suministros o interferencia."
+                  "By SEQ transformó nuestras mañanas de obra. En lugar de horas al teléfono coordinando proveedores y llenando bitácoras, los agentes nos alertan temprano sobre cualquier conflicto de suministros o interferencia."
                 </p>
                 <div className="mt-3 pt-2 border-t border-zinc-800 flex items-center justify-between text-xs font-mono">
                   <span className="font-bold text-white">Dirección de Operaciones</span>

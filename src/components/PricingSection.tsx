@@ -82,10 +82,10 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenDemo }) =>
             <span>Precios Transparentes al Estilo RunPod</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Planes Claros, Sin Contratos Sorpresa
+            Planes Transparentes y Escalables
           </h2>
-          <p className="text-zinc-400 text-base sm:text-lg mt-4 leading-relaxed">
-            Paga solo por la capacidad y número de obras activas que necesitas. Escala o desactiva pods con total libertad según el ritmo de tus contratos.
+          <p className="text-zinc-400 text-sm sm:text-base mt-3">
+            Paga solo por la capacidad de obras activas que necesitas. Escala pods bajo demanda.
           </p>
 
           {/* Billing Switch */}
@@ -176,7 +176,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenDemo }) =>
                 {/* CTA Button */}
                 <button
                   onClick={() => onOpenDemo({ 
-                    company: 'Software Enterprise Quality', 
+                    company: 'By SEQ', 
                     intent: `plan_${plan.id}_${annualBilling ? 'annual' : 'monthly'}` 
                   })}
                   className={`w-full py-3.5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 cursor-pointer ${
@@ -203,7 +203,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenDemo }) =>
             </div>
           </div>
           <button
-            onClick={() => onOpenDemo({ company: 'Software Enterprise Quality', intent: 'pilot_guarantee' })}
+            onClick={() => onOpenDemo({ company: 'By SEQ', intent: 'pilot_guarantee' })}
             className="px-5 py-2.5 rounded-lg bg-zinc-800 hover:bg-zinc-750 text-white text-xs font-semibold border border-zinc-700 whitespace-nowrap cursor-pointer"
           >
             Conocer Condiciones del Piloto

@@ -1,5 +1,5 @@
 /**
- * Core business logic and calculations for ConstrucPod AI by Software Enterprise Quality (SEQ)
+ * Core business logic and calculations for By SEQ (Software Enterprise Quality)
  * Tailored for general contractors and commercial facility service providers
  */
 

@@ -2,20 +2,20 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'ConstrucPod AI · Software Enterprise Quality (SEQ)',
+  title: 'By SEQ · AI Cloud para Obras y Facility Services',
   description:
-    'Plataforma de IA para la gestión de obras y facility services. Monitoreo en tiempo real y prevención predictiva de retrasos por Software Enterprise Quality (SEQ).',
+    'Plataforma de inteligencia artificial para control de obras, facility services y predicción de retrasos en tiempo real por Software Enterprise Quality (SEQ).',
   openGraph: {
-    title: 'ConstrucPod AI · Software Enterprise Quality (SEQ)',
+    title: 'By SEQ · AI Cloud para Obras y Facility Services',
     description:
-      'Agentes de IA para control de obras, mantenimiento de instalaciones y prevención de cuellos de botella.',
+      'Agentes de IA para control de obras, mantenimiento de infraestructura y prevención de cuellos de botella.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ConstrucPod AI · Software Enterprise Quality (SEQ)',
+    title: 'By SEQ · AI Cloud para Obras y Facility Services',
     description:
-      'Agentes de IA para control de obras, mantenimiento de instalaciones y prevención de cuellos de botella.',
+      'Agentes de IA para control de obras, mantenimiento de infraestructura y prevención de cuellos de botella.',
   },
 };
 

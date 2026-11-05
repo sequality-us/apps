@@ -1,4 +1,4 @@
-# ConstrucPod AI — Software Enterprise Quality (SEQ)
+# By SEQ — Software Enterprise Quality
 
 Plataforma de inteligencia artificial para la gestión de obras y facility services en tiempo real. Monitoreo predictivo, agentes autónomos y prevención de cuellos de botella desarrollada por **Software Enterprise Quality (SEQ)**.
 

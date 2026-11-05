@@ -8,8 +8,8 @@ export const FaqSection: React.FC = () => {
 
   const faqs = [
     {
-      q: '¿Qué es ConstrucPod AI y cómo apoya Software Enterprise Quality (SEQ)?',
-      a: 'Es una plataforma SaaS de IA desarrollada por Software Enterprise Quality (SEQ) que automatiza el control de obra, genera bitácoras diarias y anticipa cuellos de botella operativos en tiempo real.'
+      q: '¿Qué es By SEQ?',
+      a: 'Es la plataforma de inteligencia artificial desarrollada por Software Enterprise Quality (SEQ) para automatizar el control de obras, bitácoras diarias y prevención predictiva de retrasos en tiempo real.'
     },
     {
       q: '¿Cómo predice la IA los cuellos de botella con 7 a 14 días de anticipación?',

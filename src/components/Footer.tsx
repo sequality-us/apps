@@ -24,8 +24,8 @@ export const Footer: React.FC<FooterProps> = ({ onScrollTo, onOpenDemo }) => {
                   <Cpu className="w-4 h-4 text-violet-400" />
                 </div>
               </div>
-              <span className="font-extrabold text-lg text-white font-mono tracking-tight">
-                Construc<span className="text-violet-400">Pod</span>
+              <span className="font-black text-xl text-white font-mono tracking-tight">
+                By <span className="text-violet-400">SEQ</span>
               </span>
             </div>
 
@@ -120,7 +120,7 @@ export const Footer: React.FC<FooterProps> = ({ onScrollTo, onOpenDemo }) => {
         {/* Bottom Strip */}
         <div className="pt-6 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-zinc-400 text-[11px]">
           <div>
-            © {new Date().getFullYear()} Software Enterprise Quality (SEQ). ConstrucPod AI.
+            © {new Date().getFullYear()} Software Enterprise Quality (SEQ). By SEQ.
           </div>
           <div className="flex items-center gap-5">
             <button 

@@ -1,13 +1,15 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { 
   Terminal, 
   Cpu, 
   RefreshCw, 
   FileText, 
   Sliders, 
-  AlertTriangle
+  AlertTriangle,
+  Activity
 } from 'lucide-react';
 
 interface ProjectPod {
@@ -44,7 +46,7 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
   const [projects] = useState<ProjectPod[]>([
     {
       id: 'pod-seq-miami',
-      name: 'Torre Corporativa Biscayne - Climatización & HVAC',
+      name: 'Torre Biscayne - Climatización HVAC',
       client: 'SEQ Commercial',
       type: 'Comercial',
       location: 'Miami, FL',
@@ -57,7 +59,7 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
     },
     {
       id: 'pod-seq-atlanta',
-      name: 'Centro Logístico Southeast - Mantenimiento 24/7',
+      name: 'Centro Logístico Southeast - Mantenimiento',
       client: 'SEQ Facilities',
       type: 'Facility Services',
       location: 'Atlanta, GA',
@@ -70,7 +72,7 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
     },
     {
       id: 'pod-seq-dallas',
-      name: 'Residencial Sunset Palms - Mantenimiento General',
+      name: 'Residencial Sunset Palms - Mantenimiento',
       client: 'SEQ Residential',
       type: 'Residencial',
       location: 'Dallas, TX',
@@ -92,7 +94,7 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
       id: 'log-1',
       timestamp: '16:40:12',
       category: 'VISION',
-      message: 'Cuadrilla de ductería HVAC validada en Piso 4 (8 operarios con EPP completo).',
+      message: 'Cuadrilla HVAC validada en Piso 4 (8 operarios con EPP completo).',
       level: 'info'
     },
     {
@@ -106,7 +108,7 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
       id: 'log-3',
       timestamp: '16:42:30',
       category: 'FACILITY',
-      message: 'Orden #WO-9941 de mantenimiento correctivo chiller despachada y aceptada en 4 minutos.',
+      message: 'Orden #WO-9941 de mantenimiento chiller despachada y aceptada en 4 min.',
       level: 'info'
     },
     {
@@ -130,7 +132,7 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
           id: `log-${Date.now()}`,
           timestamp: newTimestamp,
           category: 'VISION',
-          message: `Inspección fotogramétrica para ${currentProject.name}: 128 fotos analizadas contra planos BIM. 0 discrepancias detectadas.`,
+          message: `Inspección fotogramétrica para ${currentProject.name}: 128 fotos analizadas contra planos BIM. 0 discrepancias.`,
           level: 'success'
         },
         ...prev
@@ -149,7 +151,7 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
           id: `log-${Date.now()}`,
           timestamp: newTimestamp,
           category: 'BOTTLENECK',
-          message: `⚠️ ALERTA PREDICTIVA: Detección anticipada de retraso en válvulas de control. Recomendación: Reasignar orden a distribuidor local homologado.`,
+          message: `⚠️ ALERTA: Retraso en válvulas de control. Recomendación: Reasignar orden a distribuidor local homologado.`,
           level: 'warning'
         },
         ...prev
@@ -159,21 +161,21 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
   };
 
   return (
-    <section id="console" className="py-16 bg-[#08090E] border-y border-zinc-850 relative">
+    <section id="console" className="py-24 bg-[#08090E] border-y border-zinc-850 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-violet-400 mb-2">
+            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-violet-400 mb-3">
               <Terminal className="w-4 h-4" />
-              <span>Consola en Tiempo Real · SEQ Cloud</span>
+              <span>Consola en Tiempo Real · By SEQ</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-              Control de Obras y Mantenimiento
+            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
+              Control de Obras y Telemetría
             </h2>
             <p className="text-zinc-400 text-sm sm:text-base mt-2 max-w-xl">
-              Telemetría de cuadrillas, detección de retrasos y generación de bitácoras sin fricción.
+              Supervisión de cuadrillas, detección de retrasos y bitácoras automáticas.
             </p>
           </div>
 
@@ -184,7 +186,7 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
             </span>
             <button
               onClick={() => onOpenReportModal(currentProject.name)}
-              className="px-4 py-2 rounded-lg bg-violet-600/20 hover:bg-violet-600/30 border border-violet-500/40 text-violet-300 hover:text-white text-xs font-semibold flex items-center gap-2 transition-all cursor-pointer"
+              className="px-4 py-2.5 rounded-xl bg-violet-600/20 hover:bg-violet-600/30 border border-violet-500/40 text-violet-300 hover:text-white text-xs font-semibold flex items-center gap-2 transition-all cursor-pointer"
             >
               <FileText className="w-3.5 h-3.5" />
               Ver Reporte Diario
@@ -193,28 +195,28 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
         </div>
 
         {/* Console Box */}
-        <div className="rounded-2xl bg-[#0B0D14] border border-zinc-800 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-zinc-800">
+        <div className="rounded-3xl bg-[#0B0D14] border border-zinc-800 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-zinc-800">
           
           {/* Left: Project Selector */}
-          <div className="lg:col-span-4 p-4 sm:p-5 bg-[#090B10] flex flex-col justify-between">
+          <div className="lg:col-span-4 p-5 sm:p-6 bg-[#090B10] flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center justify-between mb-5">
                 <span className="text-xs font-mono font-semibold uppercase tracking-wider text-zinc-400">
                   Obras Activas
                 </span>
                 <span className="text-[11px] font-mono text-zinc-300">
-                  3 desplegados
+                  3 desplegadas
                 </span>
               </div>
 
-              <div className="space-y-2.5">
+              <div className="space-y-3">
                 {projects.map((proj) => {
                   const isSelected = proj.id === selectedProjectId;
                   return (
                     <button
                       key={proj.id}
                       onClick={() => setSelectedProjectId(proj.id)}
-                      className={`w-full text-left p-3.5 rounded-xl border transition-all cursor-pointer ${
+                      className={`w-full text-left p-4 rounded-2xl border transition-all cursor-pointer ${
                         isSelected
                           ? 'bg-zinc-850/90 border-violet-500/60 shadow-[0_0_15px_rgba(139,92,246,0.15)]'
                           : 'bg-zinc-900/40 border-zinc-800/80 hover:bg-zinc-850/40 hover:border-zinc-700'
@@ -229,18 +231,18 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
                             ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
                             : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
                         }`}>
-                          {proj.status === 'nominal' ? 'ÓPTIMO' : '1 ALERTA'}
+                          {proj.status === 'nominal' ? 'ÓPTIMO' : 'ALERTA'}
                         </span>
                       </div>
 
-                      <div className="flex items-center gap-2 mt-1.5 text-xs text-zinc-400">
+                      <div className="flex items-center gap-2 mt-2 text-xs text-zinc-400">
                         <span className="text-zinc-300 font-medium">{proj.client}</span>
                         <span>·</span>
                         <span>{proj.location}</span>
                       </div>
 
                       <div className="mt-3">
-                        <div className="flex items-center justify-between text-[11px] font-mono text-zinc-400 mb-1">
+                        <div className="flex items-center justify-between text-[11px] font-mono text-zinc-400 mb-1.5">
                           <span>Avance Real: <strong className="text-white">{proj.progressPct}%</strong></span>
                           <span>Plan: {proj.scheduledPct}%</span>
                         </div>
@@ -259,10 +261,10 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-zinc-800/80">
+            <div className="mt-8 pt-5 border-t border-zinc-800/80">
               <button
-                onClick={() => onOpenDemo({ company: 'Software Enterprise Quality', intent: 'new_site_pod' })}
-                className="w-full py-2.5 px-3 rounded-lg bg-zinc-800 hover:bg-zinc-750 text-zinc-200 hover:text-white text-xs font-semibold font-mono flex items-center justify-center gap-2 transition-all cursor-pointer border border-zinc-700/60"
+                onClick={() => onOpenDemo({ company: 'By SEQ', intent: 'new_site_pod' })}
+                className="w-full py-3 px-3 rounded-xl bg-zinc-800 hover:bg-zinc-750 text-zinc-200 hover:text-white text-xs font-semibold font-mono flex items-center justify-center gap-2 transition-all cursor-pointer border border-zinc-700/60"
               >
                 <Cpu className="w-3.5 h-3.5 text-violet-400" />
                 <span>+ Desplegar Nuevo Pod</span>
@@ -270,38 +272,53 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
             </div>
           </div>
 
-          {/* Right: Telemetry & Logs */}
-          <div className="lg:col-span-8 p-4 sm:p-6 flex flex-col justify-between bg-[#0B0D14]">
+          {/* Right: Telemetry, Hologram & Logs */}
+          <div className="lg:col-span-8 p-5 sm:p-7 flex flex-col justify-between bg-[#0B0D14]">
             <div>
-              <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-zinc-800">
+              <div className="flex flex-wrap items-center justify-between gap-3 pb-5 border-b border-zinc-800">
                 <div>
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span className="text-base font-bold text-white">
+                    <span className="text-lg font-bold text-white">
                       {currentProject.name}
                     </span>
                   </div>
-                  <div className="flex items-center gap-3 text-xs text-zinc-400 mt-1 font-mono">
+                  <div className="flex items-center gap-3 text-xs text-zinc-400 mt-1.5 font-mono">
                     <span>ID: <strong className="text-zinc-300">{currentProject.id}</strong></span>
                     <span>·</span>
                     <span>Tipo: <strong className="text-violet-300">{currentProject.type}</strong></span>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2">
-                  <div className="px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-center">
+                <div className="flex items-center gap-2.5">
+                  <div className="px-3.5 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-center">
                     <div className="text-[10px] text-zinc-400 uppercase font-mono">Cuadrilla</div>
                     <div className="text-sm font-bold text-white font-mono">{currentProject.activeCrew} en sitio</div>
                   </div>
-                  <div className="px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-center">
-                    <div className="text-[10px] text-zinc-400 uppercase font-mono">Seguridad OSHA</div>
+                  <div className="px-3.5 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-center">
+                    <div className="text-[10px] text-zinc-400 uppercase font-mono">Seguridad</div>
                     <div className="text-sm font-bold text-emerald-400 font-mono">0 Incidentes</div>
                   </div>
                 </div>
               </div>
 
+              {/* Holographic Wireframe Visual Banner */}
+              <div className="my-4 rounded-2xl bg-zinc-900/60 border border-zinc-800 overflow-hidden relative h-36 w-full">
+                <Image 
+                  src="/images/bim-isometric.jpg"
+                  alt="Holograma BIM"
+                  fill
+                  className="object-cover object-center opacity-70"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0B0D14] via-transparent to-[#0B0D14]" />
+                <div className="absolute bottom-3 left-4 flex items-center gap-2 text-xs font-mono text-zinc-200 bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg border border-zinc-800">
+                  <Activity className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Modelo Digital Twin: SEQ-BIM-v2.8 Activo</span>
+                </div>
+              </div>
+
               {/* Action Toolbar */}
-              <div className="py-3.5 flex flex-wrap items-center gap-2">
+              <div className="py-3 flex flex-wrap items-center gap-2">
                 <span className="text-xs font-mono text-zinc-400 mr-2 flex items-center gap-1">
                   <Sliders className="w-3.5 h-3.5 text-zinc-400" /> Acciones:
                 </span>
@@ -309,7 +326,7 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
                 <button
                   onClick={handleRunInspection}
                   disabled={isRunningInspection}
-                  className="px-3 py-1.5 rounded-lg bg-violet-600/30 hover:bg-violet-600/40 text-violet-200 border border-violet-500/40 text-xs font-mono font-medium flex items-center gap-1.5 transition-all cursor-pointer disabled:opacity-50"
+                  className="px-3.5 py-2 rounded-xl bg-violet-600/30 hover:bg-violet-600/40 text-violet-200 border border-violet-500/40 text-xs font-mono font-medium flex items-center gap-1.5 transition-all cursor-pointer disabled:opacity-50"
                 >
                   <RefreshCw className={`w-3 h-3 ${isRunningInspection ? 'animate-spin' : ''}`} />
                   <span>{isRunningInspection ? 'Analizando...' : 'Auditoría Fotográfica'}</span>
@@ -318,15 +335,15 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
                 <button
                   onClick={handleSimulateBottleneck}
                   disabled={isInjectingBottleneck}
-                  className="px-3 py-1.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-500/40 text-xs font-mono font-medium flex items-center gap-1.5 transition-all cursor-pointer disabled:opacity-50"
+                  className="px-3.5 py-2 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-500/40 text-xs font-mono font-medium flex items-center gap-1.5 transition-all cursor-pointer disabled:opacity-50"
                 >
                   <AlertTriangle className="w-3 h-3 text-amber-400" />
-                  <span>{isInjectingBottleneck ? 'Simulando...' : 'Simular Alerta de Suministro'}</span>
+                  <span>{isInjectingBottleneck ? 'Simulando...' : 'Simular Alerta'}</span>
                 </button>
 
                 <button
                   onClick={() => onOpenReportModal(currentProject.name)}
-                  className="px-3 py-1.5 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-200 border border-cyan-500/40 text-xs font-mono font-medium flex items-center gap-1.5 transition-all cursor-pointer"
+                  className="px-3.5 py-2 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-200 border border-cyan-500/40 text-xs font-mono font-medium flex items-center gap-1.5 transition-all cursor-pointer"
                 >
                   <FileText className="w-3 h-3 text-cyan-400" />
                   <span>Generar Daily Log</span>
@@ -334,16 +351,16 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
               </div>
 
               {/* Logs */}
-              <div className="mt-2 rounded-xl bg-[#07080C] border border-zinc-800/90 p-4 font-mono text-xs overflow-hidden">
+              <div className="mt-3 rounded-2xl bg-[#07080C] border border-zinc-800/90 p-4 font-mono text-xs overflow-hidden">
                 <div className="flex items-center justify-between text-[11px] text-zinc-500 pb-2 mb-3 border-b border-zinc-850">
                   <div className="flex items-center gap-2">
                     <Terminal className="w-3.5 h-3.5 text-violet-400" />
-                    <span>TELEMETRÍA · Software Enterprise Quality (SEQ)</span>
+                    <span>TELEMETRÍA STREAM · By SEQ</span>
                   </div>
                   <span className="text-zinc-600">En tiempo real</span>
                 </div>
 
-                <div className="space-y-2.5 max-h-56 overflow-y-auto pr-1">
+                <div className="space-y-2 max-h-48 overflow-y-auto pr-1">
                   {logs.map((entry) => (
                     <div key={entry.id} className="flex items-start gap-2.5 leading-relaxed">
                       <span className="text-zinc-500 shrink-0 text-[11px]">{entry.timestamp}</span>
@@ -374,16 +391,16 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
             </div>
 
             {/* Bottom */}
-            <div className="mt-4 pt-3 border-t border-zinc-800/80 flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-400 font-mono">
+            <div className="mt-5 pt-4 border-t border-zinc-800/80 flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-400 font-mono">
               <div className="flex items-center gap-4">
-                <span>Cluster: <strong className="text-zinc-200">SEQ Cloud Engine</strong></span>
-                <span>Modelo: <strong className="text-violet-400">ConstrucBIM-v2.8</strong></span>
+                <span>Cluster: <strong className="text-zinc-200">SEQ Cloud</strong></span>
+                <span>Modelo: <strong className="text-violet-400">SEQ-BIM-v2.8</strong></span>
               </div>
               <button
-                onClick={() => onOpenDemo({ company: 'Software Enterprise Quality', intent: 'full_specs' })}
+                onClick={() => onOpenDemo({ company: 'By SEQ', intent: 'full_specs' })}
                 className="text-violet-400 hover:text-violet-300 underline cursor-pointer"
               >
-                Solicitar información técnica →
+                Documentación técnica →
               </button>
             </div>
           </div>

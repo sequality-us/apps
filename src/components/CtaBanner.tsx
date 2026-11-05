@@ -27,12 +27,12 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenDemo, onScrollTo }) 
           </h2>
 
           <p className="text-sm sm:text-base text-zinc-300 max-w-xl mx-auto mb-8 leading-relaxed">
-            Elimina retrasos, sobrecostos y papeleo manual con los agentes de IA autónomos de ConstrucPod.
+            Elimina retrasos, sobrecostos y papeleo manual con los agentes de IA autónomos de By SEQ.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <button
-              onClick={() => onOpenDemo({ company: 'Software Enterprise Quality', intent: 'cta_primary' })}
+              onClick={() => onOpenDemo({ company: 'By SEQ', intent: 'cta_primary' })}
               className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer group"
             >
               <Zap className="w-4 h-4 text-amber-300 group-hover:scale-110 transition-transform" />
