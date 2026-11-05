@@ -256,7 +256,7 @@ export const RoiCalculator: React.FC<RoiCalculatorProps> = ({ onOpenDemo }) => {
                   <div className="text-sm font-bold text-amber-300 font-mono mt-1">
                     {results.estimatedPlatformTier}
                   </div>
-                  <div className="text-[10px] text-zinc-400 mt-0.5">Basado en volumen ACG</div>
+                  <div className="text-[10px] text-zinc-400 mt-0.5">Basado en volumen operativo</div>
                 </div>
               </div>
             </div>
@@ -265,7 +265,7 @@ export const RoiCalculator: React.FC<RoiCalculatorProps> = ({ onOpenDemo }) => {
             <div className="pt-4 border-t border-zinc-800 space-y-3">
               <button
                 onClick={() => onOpenDemo({ 
-                  company: 'Advance Contractor Group', 
+                  company: 'Software Enterprise Quality', 
                   intent: `ROI_${results.roiMultiplier}x_Savings_${results.monthlyFinancialSavingsUSD}` 
                 })}
                 className="w-full py-3 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-bold text-sm shadow-[0_0_20px_rgba(139,92,246,0.4)] transition-all flex items-center justify-center gap-2 cursor-pointer"

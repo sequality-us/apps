@@ -2,20 +2,20 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'ConstrucPod AI · Plataforma de IA para Gestión de Obras y Facility Services',
+  title: 'ConstrucPod AI · Software Enterprise Quality (SEQ)',
   description:
-    'Plataforma SaaS automatizada con inteligencia artificial para la gestión de obras y facility services. Monitoreo en tiempo real, agentes autónomos y detección de cuellos de botella para contratistas MBE y empresas como Advance Contractor Group.',
+    'Plataforma de IA para la gestión de obras y facility services. Monitoreo en tiempo real y prevención predictiva de retrasos por Software Enterprise Quality (SEQ).',
   openGraph: {
-    title: 'ConstrucPod AI · Plataforma de IA para Gestión de Obras y Facility Services',
+    title: 'ConstrucPod AI · Software Enterprise Quality (SEQ)',
     description:
-      'Infraestructura de agentes de IA para el monitoreo de obras, mantenimiento integral y predicción de cuellos de botella operativos en tiempo real.',
+      'Agentes de IA para control de obras, mantenimiento de instalaciones y prevención de cuellos de botella.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ConstrucPod AI · Plataforma de IA para Gestión de Obras y Facility Services',
+    title: 'ConstrucPod AI · Software Enterprise Quality (SEQ)',
     description:
-      'Infraestructura de agentes de IA para el monitoreo de obras, mantenimiento integral y predicción de cuellos de botella operativos en tiempo real.',
+      'Agentes de IA para control de obras, mantenimiento de instalaciones y prevención de cuellos de botella.',
   },
 };
 

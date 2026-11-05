@@ -1,23 +1,13 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
   Terminal, 
   Cpu, 
-  Activity, 
-  Layers, 
-  CheckCircle2, 
-  AlertTriangle, 
-  Play, 
   RefreshCw, 
   FileText, 
   Sliders, 
-  ShieldCheck, 
-  HardHat, 
-  Building, 
-  Clock, 
-  Sparkles,
-  Download
+  AlertTriangle
 } from 'lucide-react';
 
 interface ProjectPod {
@@ -37,7 +27,7 @@ interface ProjectPod {
 interface LogEntry {
   id: string;
   timestamp: string;
-  category: 'VISION' | 'BOTTLENECK' | 'FACILITY' | 'MBE_AUDIT';
+  category: 'VISION' | 'BOTTLENECK' | 'FACILITY' | 'AUDIT';
   message: string;
   level: 'info' | 'warning' | 'success';
 }
@@ -53,9 +43,9 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
 }) => {
   const [projects] = useState<ProjectPod[]>([
     {
-      id: 'pod-acg-miami',
-      name: 'Torre Corporativa Biscayne - HVAC & Remodelación',
-      client: 'Advance Contractor Group (ACG)',
+      id: 'pod-seq-miami',
+      name: 'Torre Corporativa Biscayne - Climatización & HVAC',
+      client: 'SEQ Commercial',
       type: 'Comercial',
       location: 'Miami, FL',
       progressPct: 74.2,
@@ -66,9 +56,9 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
       lastReport: 'Hoy 16:45'
     },
     {
-      id: 'pod-acg-atlanta',
-      name: 'Centro Logístico Southeast - Facility Maintenance 24/7',
-      client: 'Advance Contractor Group (ACG)',
+      id: 'pod-seq-atlanta',
+      name: 'Centro Logístico Southeast - Mantenimiento 24/7',
+      client: 'SEQ Facilities',
       type: 'Facility Services',
       location: 'Atlanta, GA',
       progressPct: 88.5,
@@ -79,9 +69,9 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
       lastReport: 'Hoy 15:30'
     },
     {
-      id: 'pod-acg-dallas',
-      name: 'Residencial Sunset Palms - Mantenimiento & Pintura (120 U)',
-      client: 'Advance Contractor Group (ACG)',
+      id: 'pod-seq-dallas',
+      name: 'Residencial Sunset Palms - Mantenimiento General',
+      client: 'SEQ Residential',
       type: 'Residencial',
       location: 'Dallas, TX',
       progressPct: 53.0,
@@ -93,7 +83,7 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
     }
   ]);
 
-  const [selectedProjectId, setSelectedProjectId] = useState<string>('pod-acg-miami');
+  const [selectedProjectId, setSelectedProjectId] = useState<string>('pod-seq-miami');
   const [isRunningInspection, setIsRunningInspection] = useState<boolean>(false);
   const [isInjectingBottleneck, setIsInjectingBottleneck] = useState<boolean>(false);
 
@@ -102,28 +92,28 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
       id: 'log-1',
       timestamp: '16:40:12',
       category: 'VISION',
-      message: 'Agente de Visión Computacional: Cuadrilla ACG de ductería HVAC validada en Piso 4 (8 operarios con EPP completo).',
+      message: 'Cuadrilla de ductería HVAC validada en Piso 4 (8 operarios con EPP completo).',
       level: 'info'
     },
     {
       id: 'log-2',
       timestamp: '16:41:05',
-      category: 'MBE_AUDIT',
-      message: 'Verificación de jornales Davis-Bacon y cuota de subcontratación MBE completada para licitación pública (100% compliant).',
+      category: 'AUDIT',
+      message: 'Verificación de jornales y cuota normativa completada (100% compliant).',
       level: 'success'
     },
     {
       id: 'log-3',
       timestamp: '16:42:30',
       category: 'FACILITY',
-      message: 'Orden de trabajo #WO-9941 de mantenimiento correctivo chiller despachada y aceptada por técnico certificado en 4 minutos.',
+      message: 'Orden #WO-9941 de mantenimiento correctivo chiller despachada y aceptada en 4 minutos.',
       level: 'info'
     },
     {
       id: 'log-4',
       timestamp: '16:44:18',
       category: 'BOTTLENECK',
-      message: 'Análisis predictivo de suministros: Entrega de tableros eléctricos confirmada sin retrasos. Ventana de inspección municipal asegurada.',
+      message: 'Análisis de suministros: Entrega de tableros eléctricos confirmada en fecha.',
       level: 'success'
     }
   ]);
@@ -140,7 +130,7 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
           id: `log-${Date.now()}`,
           timestamp: newTimestamp,
           category: 'VISION',
-          message: `Inspección de avance fotogramétrico completada para ${currentProject.name}: 128 fotos analizadas contra planos BIM. 0 discrepancias estructurales detectadas.`,
+          message: `Inspección fotogramétrica para ${currentProject.name}: 128 fotos analizadas contra planos BIM. 0 discrepancias detectadas.`,
           level: 'success'
         },
         ...prev
@@ -159,7 +149,7 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
           id: `log-${Date.now()}`,
           timestamp: newTimestamp,
           category: 'BOTTLENECK',
-          message: `⚠️ ALERTA PREDICTIVA: Detección anticipada de retraso en válvulas de control (Proveedor Primario retrasará 4 días). Plan de contingencia sugerido: Reasignar orden a distribuidor certificado ACG local.`,
+          message: `⚠️ ALERTA PREDICTIVA: Detección anticipada de retraso en válvulas de control. Recomendación: Reasignar orden a distribuidor local homologado.`,
           level: 'warning'
         },
         ...prev
@@ -169,48 +159,48 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
   };
 
   return (
-    <section id="console" className="py-20 bg-[#08090E] border-y border-zinc-850 relative">
+    <section id="console" className="py-16 bg-[#08090E] border-y border-zinc-850 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
           <div>
             <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-violet-400 mb-2">
               <Terminal className="w-4 h-4" />
-              <span>Consola en Tiempo Real · Site Pods Controller</span>
+              <span>Consola en Tiempo Real · SEQ Cloud</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-              Control Autónomo de Obras y Servicios de Mantenimiento
+              Control de Obras y Mantenimiento
             </h2>
-            <p className="text-zinc-400 text-sm sm:text-base mt-2 max-w-2xl">
-              Interactúa con los agentes de IA desplegados en obras comerciales y residenciales de contratistas como Advance Contractor Group. Telemetría de cuadrillas, detección de retrasos y generación de bitácoras sin fricción.
+            <p className="text-zinc-400 text-sm sm:text-base mt-2 max-w-xl">
+              Telemetría de cuadrillas, detección de retrasos y generación de bitácoras sin fricción.
             </p>
           </div>
 
           <div className="flex items-center gap-3">
             <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-mono text-emerald-400">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              Conexión Satelital & IoT Activa
+              En Vivo
             </span>
             <button
               onClick={() => onOpenReportModal(currentProject.name)}
               className="px-4 py-2 rounded-lg bg-violet-600/20 hover:bg-violet-600/30 border border-violet-500/40 text-violet-300 hover:text-white text-xs font-semibold flex items-center gap-2 transition-all cursor-pointer"
             >
               <FileText className="w-3.5 h-3.5" />
-              Ver Reporte Diario ACG
+              Ver Reporte Diario
             </button>
           </div>
         </div>
 
-        {/* The RunPod-like Console Box */}
+        {/* Console Box */}
         <div className="rounded-2xl bg-[#0B0D14] border border-zinc-800 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-zinc-800">
           
-          {/* Left Column: Pod / Project Selector */}
+          {/* Left: Project Selector */}
           <div className="lg:col-span-4 p-4 sm:p-5 bg-[#090B10] flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-mono font-semibold uppercase tracking-wider text-zinc-400">
-                  Obras Activas (Pods)
+                  Obras Activas
                 </span>
                 <span className="text-[11px] font-mono text-zinc-300">
                   3 desplegados
@@ -239,7 +229,7 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
                             ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
                             : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
                         }`}>
-                          {proj.status === 'nominal' ? 'OPTIMO' : '1 ALERTA'}
+                          {proj.status === 'nominal' ? 'ÓPTIMO' : '1 ALERTA'}
                         </span>
                       </div>
 
@@ -269,21 +259,19 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
               </div>
             </div>
 
-            {/* Quick Pod Deploy Trigger */}
             <div className="mt-6 pt-4 border-t border-zinc-800/80">
               <button
-                onClick={() => onOpenDemo({ company: 'Advance Contractor Group', intent: 'new_site_pod' })}
+                onClick={() => onOpenDemo({ company: 'Software Enterprise Quality', intent: 'new_site_pod' })}
                 className="w-full py-2.5 px-3 rounded-lg bg-zinc-800 hover:bg-zinc-750 text-zinc-200 hover:text-white text-xs font-semibold font-mono flex items-center justify-center gap-2 transition-all cursor-pointer border border-zinc-700/60"
               >
                 <Cpu className="w-3.5 h-3.5 text-violet-400" />
-                <span>+ Desplegar Nuevo Pod de Obra</span>
+                <span>+ Desplegar Nuevo Pod</span>
               </button>
             </div>
           </div>
 
-          {/* Right Column: Telemetry, Logs & Controls */}
+          {/* Right: Telemetry & Logs */}
           <div className="lg:col-span-8 p-4 sm:p-6 flex flex-col justify-between bg-[#0B0D14]">
-            {/* Top Pod Status Banner */}
             <div>
               <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-zinc-800">
                 <div>
@@ -297,28 +285,25 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
                     <span>ID: <strong className="text-zinc-300">{currentProject.id}</strong></span>
                     <span>·</span>
                     <span>Tipo: <strong className="text-violet-300">{currentProject.type}</strong></span>
-                    <span>·</span>
-                    <span>Certificación: <strong className="text-amber-300">MBE Validada</strong></span>
                   </div>
                 </div>
 
-                {/* Instant Pod Metrics */}
                 <div className="flex items-center gap-2">
                   <div className="px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-center">
-                    <div className="text-[10px] text-zinc-400 uppercase font-mono">Cuadrilla en Sitio</div>
-                    <div className="text-sm font-bold text-white font-mono">{currentProject.activeCrew} operarios</div>
+                    <div className="text-[10px] text-zinc-400 uppercase font-mono">Cuadrilla</div>
+                    <div className="text-sm font-bold text-white font-mono">{currentProject.activeCrew} en sitio</div>
                   </div>
                   <div className="px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-center">
                     <div className="text-[10px] text-zinc-400 uppercase font-mono">Seguridad OSHA</div>
-                    <div className="text-sm font-bold text-emerald-400 font-mono">100% Cero Incidentes</div>
+                    <div className="text-sm font-bold text-emerald-400 font-mono">0 Incidentes</div>
                   </div>
                 </div>
               </div>
 
-              {/* Action Toolbar to interact with the AI Engine */}
+              {/* Action Toolbar */}
               <div className="py-3.5 flex flex-wrap items-center gap-2">
                 <span className="text-xs font-mono text-zinc-400 mr-2 flex items-center gap-1">
-                  <Sliders className="w-3.5 h-3.5 text-zinc-400" /> Acciones de IA:
+                  <Sliders className="w-3.5 h-3.5 text-zinc-400" /> Acciones:
                 </span>
                 
                 <button
@@ -327,7 +312,7 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
                   className="px-3 py-1.5 rounded-lg bg-violet-600/30 hover:bg-violet-600/40 text-violet-200 border border-violet-500/40 text-xs font-mono font-medium flex items-center gap-1.5 transition-all cursor-pointer disabled:opacity-50"
                 >
                   <RefreshCw className={`w-3 h-3 ${isRunningInspection ? 'animate-spin' : ''}`} />
-                  <span>{isRunningInspection ? 'Analizando Fotos...' : 'Auditoría Fotográfica'}</span>
+                  <span>{isRunningInspection ? 'Analizando...' : 'Auditoría Fotográfica'}</span>
                 </button>
 
                 <button
@@ -344,18 +329,18 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
                   className="px-3 py-1.5 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-200 border border-cyan-500/40 text-xs font-mono font-medium flex items-center gap-1.5 transition-all cursor-pointer"
                 >
                   <FileText className="w-3 h-3 text-cyan-400" />
-                  <span>Generar Daily Log ACG</span>
+                  <span>Generar Daily Log</span>
                 </button>
               </div>
 
-              {/* Terminal Logs Window */}
+              {/* Logs */}
               <div className="mt-2 rounded-xl bg-[#07080C] border border-zinc-800/90 p-4 font-mono text-xs overflow-hidden">
                 <div className="flex items-center justify-between text-[11px] text-zinc-500 pb-2 mb-3 border-b border-zinc-850">
                   <div className="flex items-center gap-2">
                     <Terminal className="w-3.5 h-3.5 text-violet-400" />
-                    <span>TELEMETRY STREAM · /var/log/construcpod-agents.log</span>
+                    <span>TELEMETRÍA · Software Enterprise Quality (SEQ)</span>
                   </div>
-                  <span className="text-zinc-600">Auto-scroll ON</span>
+                  <span className="text-zinc-600">En tiempo real</span>
                 </div>
 
                 <div className="space-y-2.5 max-h-56 overflow-y-auto pr-1">
@@ -367,7 +352,7 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
                           ? 'bg-purple-950 text-purple-300 border border-purple-800/60'
                           : entry.category === 'BOTTLENECK'
                           ? 'bg-amber-950 text-amber-300 border border-amber-800/60'
-                          : entry.category === 'MBE_AUDIT'
+                          : entry.category === 'AUDIT'
                           ? 'bg-emerald-950 text-emerald-300 border border-emerald-800/60'
                           : 'bg-blue-950 text-blue-300 border border-blue-800/60'
                       }`}>
@@ -388,17 +373,17 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
               </div>
             </div>
 
-            {/* Bottom Bar: Quick Spec Summary */}
+            {/* Bottom */}
             <div className="mt-4 pt-3 border-t border-zinc-800/80 flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-400 font-mono">
               <div className="flex items-center gap-4">
-                <span>Cluster: <strong className="text-zinc-200">US-EAST (Miami/Atlanta)</strong></span>
-                <span>Modelo de Visión: <strong className="text-violet-400">ConstrucBIM-v2.8-Large</strong></span>
+                <span>Cluster: <strong className="text-zinc-200">SEQ Cloud Engine</strong></span>
+                <span>Modelo: <strong className="text-violet-400">ConstrucBIM-v2.8</strong></span>
               </div>
               <button
-                onClick={() => onOpenDemo({ company: 'Advance Contractor Group', intent: 'full_specs' })}
+                onClick={() => onOpenDemo({ company: 'Software Enterprise Quality', intent: 'full_specs' })}
                 className="text-violet-400 hover:text-violet-300 underline cursor-pointer"
               >
-                Ver arquitectura completa de agentes →
+                Solicitar información técnica →
               </button>
             </div>
           </div>

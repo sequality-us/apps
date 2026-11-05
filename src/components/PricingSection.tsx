@@ -33,22 +33,22 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenDemo }) =>
     {
       id: 'scale',
       name: 'Scale Pod',
-      tag: 'RECOMENDADO PARA CONTRATISTAS MBE',
+      tag: 'RECOMENDADO',
       monthlyPrice: 990,
       annualPrice: 790,
-      description: 'La opción predilecta para contratistas generales y facility services comerciales como Advance Contractor Group.',
+      description: 'Para contratistas generales y facility services comerciales.',
       features: [
         'Hasta 10 obras activas en simultáneo',
-        'Órdenes de trabajo y despacho de facility ilimitadas',
-        'Motor Predictivo Avanzado de Cuellos de Botella (14 días)',
-        'Módulo Automatizado de Cumplimiento MBE y Davis-Bacon',
-        'Sincronización bidireccional con Procore & Autodesk BIM',
-        'Auditoría continua de seguridad OSHA y uso de EPP',
-        'Triage y despacho geo-localizado de cuadrillas en < 3 min'
+        'Órdenes de trabajo y despacho ilimitado',
+        'Motor Predictivo de Cuellos de Botella (14 días)',
+        'Módulo Automatizado de Cumplimiento Normativo',
+        'Sincronización con Procore & Autodesk BIM',
+        'Auditoría continua de seguridad OSHA',
+        'Despacho geo-localizado de cuadrillas en < 3 min'
       ],
       popular: true,
-      ctaText: 'Desplegar Scale Pod para ACG',
-      badge: 'MÁS POPULAR · IDEAL ACG'
+      ctaText: 'Desplegar Scale Pod',
+      badge: 'MÁS POPULAR'
     },
     {
       id: 'enterprise',
@@ -176,7 +176,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenDemo }) =>
                 {/* CTA Button */}
                 <button
                   onClick={() => onOpenDemo({ 
-                    company: 'Advance Contractor Group', 
+                    company: 'Software Enterprise Quality', 
                     intent: `plan_${plan.id}_${annualBilling ? 'annual' : 'monthly'}` 
                   })}
                   className={`w-full py-3.5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 cursor-pointer ${
@@ -198,12 +198,12 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenDemo }) =>
           <div className="flex items-center gap-3">
             <ShieldCheck className="w-8 h-8 text-amber-400 shrink-0" />
             <div>
-              <div className="text-sm font-bold text-white">Garantía Piloto de 30 Días para Contratistas MBE</div>
+              <div className="text-sm font-bold text-white">Garantía Piloto de 30 Días SEQ</div>
               <div className="text-xs text-zinc-400 mt-0.5">Si no reduces al menos 3 cuellos de botella en tu primer mes, te devolvemos el 100% de la inversión.</div>
             </div>
           </div>
           <button
-            onClick={() => onOpenDemo({ company: 'Advance Contractor Group', intent: 'pilot_guarantee' })}
+            onClick={() => onOpenDemo({ company: 'Software Enterprise Quality', intent: 'pilot_guarantee' })}
             className="px-5 py-2.5 rounded-lg bg-zinc-800 hover:bg-zinc-750 text-white text-xs font-semibold border border-zinc-700 whitespace-nowrap cursor-pointer"
           >
             Conocer Condiciones del Piloto

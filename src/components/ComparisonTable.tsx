@@ -116,10 +116,10 @@ export const ComparisonTable: React.FC<ComparisonTableProps> = ({ onOpenDemo }) 
           {/* Table Footer Banner */}
           <div className="p-6 bg-[#0E111B] border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-xs text-zinc-300 font-mono">
-              ¿Listo para modernizar las obras de Advance Contractor Group?
+              ¿Listo para modernizar la gestión de tus obras con Software Enterprise Quality (SEQ)?
             </div>
             <button
-              onClick={() => onOpenDemo({ company: 'Advance Contractor Group', intent: 'migration_comparison' })}
+              onClick={() => onOpenDemo({ company: 'Software Enterprise Quality', intent: 'migration_comparison' })}
               className="px-5 py-2.5 rounded-lg bg-violet-600 hover:bg-violet-500 text-white font-bold text-xs shadow-md transition-all cursor-pointer flex items-center gap-2"
             >
               <span>Migrar desde Herramientas Tradicionales</span>

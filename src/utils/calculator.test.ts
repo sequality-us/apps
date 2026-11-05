@@ -37,7 +37,7 @@ test('evaluateProjectHealth correctly assesses alerts and status', () => {
     {
       id: 'b-1',
       projectId: 'p-1',
-      projectName: 'HQ Remodel ACG',
+      projectName: 'HQ Remodel SEQ',
       trade: 'HVAC',
       category: 'supply',
       severity: 'critical',
@@ -51,7 +51,7 @@ test('evaluateProjectHealth correctly assesses alerts and status', () => {
     {
       id: 'b-2',
       projectId: 'p-1',
-      projectName: 'HQ Remodel ACG',
+      projectName: 'HQ Remodel SEQ',
       trade: 'Eléctrico',
       category: 'inspection',
       severity: 'warning',

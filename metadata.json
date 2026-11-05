@@ -1,6 +1,6 @@
 {
-  "name": "ConstrucPod AI - Plataforma SaaS de Obras & Facility Services",
-  "description": "Plataforma SaaS automatizada con IA para la gestión de obras y facility services en tiempo real. Monitoreo predictivo, agentes autónomos y detección de cuellos de botella para contratistas certificados como Advance Contractor Group (ACG).",
+  "name": "ConstrucPod AI - Software Enterprise Quality (SEQ)",
+  "description": "Plataforma de IA para la gestión de obras y facility services en tiempo real. Monitoreo predictivo, agentes autónomos y prevención de cuellos de botella por Software Enterprise Quality (SEQ).",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }

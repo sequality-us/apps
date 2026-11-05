@@ -22,7 +22,7 @@ export default function App() {
   const [demoInitialData, setDemoInitialData] = useState<{ company?: string; intent?: string } | undefined>(undefined);
   
   const [reportModalOpen, setReportModalOpen] = useState(false);
-  const [reportProjectName, setReportProjectName] = useState('Torre Biscayne - HVAC & Remodelación ACG');
+  const [reportProjectName, setReportProjectName] = useState('Torre Biscayne - HVAC & Remodelación');
 
   const handleOpenDemo = (initialData?: { company?: string; intent?: string }) => {
     setDemoInitialData(initialData);
@@ -56,7 +56,7 @@ export default function App() {
           onScrollTo={handleScrollTo}
         />
 
-        {/* Featured Client Spotlight: Advance Contractor Group (ACG) & MBE Badges */}
+        {/* Enterprise Client Banner & Standards */}
         <ClientBadges />
 
         {/* Live Interactive Site Pods Console */}
@@ -65,7 +65,7 @@ export default function App() {
           onOpenDemo={handleOpenDemo}
         />
 
-        {/* 4 Core Product Pods (Site Vision, Bottleneck Intelligence, Facility Services, MBE Compliance) */}
+        {/* 4 Core Product Pods (Site Vision, Bottleneck Intelligence, Facility Services, Compliance) */}
         <ProductPods 
           onOpenDemo={handleOpenDemo}
           onScrollTo={handleScrollTo}
@@ -82,7 +82,7 @@ export default function App() {
           onOpenDemo={handleOpenDemo}
         />
 
-        {/* Deep Dive Case Study: Advance Contractor Group, LLC */}
+        {/* Case Study: Software Enterprise Quality (SEQ) Implementation */}
         <CustomerSpotlight 
           onOpenDemo={handleOpenDemo}
           onOpenReportModal={handleOpenReportModal}

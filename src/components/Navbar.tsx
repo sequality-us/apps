@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Cpu, Terminal, ShieldCheck, ChevronRight, Menu, X, Sparkles, Building2 } from 'lucide-react';
+import { Cpu, Terminal, ChevronRight, Menu, X, Sparkles, Building2 } from 'lucide-react';
 
 interface NavbarProps {
   onOpenDemo: (initialData?: { company?: string; intent?: string }) => void;
@@ -18,15 +18,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onScrollTo }) => {
 
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-[#08090E]/85 border-b border-zinc-800/80 transition-all">
-      {/* RunPod-style slim announcement bar */}
+      {/* Slim announcement bar */}
       <div className="bg-gradient-to-r from-violet-950/70 via-purple-900/60 to-indigo-950/70 border-b border-purple-500/20 py-1.5 px-4 text-xs text-zinc-300 text-center flex items-center justify-center gap-2">
         <span className="flex h-2 w-2 relative">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
         </span>
-        <span className="font-medium text-white">Novedad v2.4:</span>
+        <span className="font-medium text-white">Software Enterprise Quality (SEQ):</span>
         <span className="hidden sm:inline text-zinc-300">
-          Agente de Detección Térmica e Interferencias BIM en Tiempo Real para Contratistas MBE en EE.UU.
+          Agentes de IA en tiempo real para obras y facility services.
         </span>
         <button 
           onClick={() => onScrollTo('bottlenecks')}
@@ -55,11 +55,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onScrollTo }) => {
                     Construc<span className="text-violet-400">Pod</span>
                   </span>
                   <span className="text-[10px] uppercase font-mono tracking-wider px-1.5 py-0.5 rounded bg-violet-500/10 text-violet-300 border border-violet-500/30">
-                    AI CLOUD
+                    BY SEQ
                   </span>
                 </div>
                 <span className="text-[10px] text-zinc-400 hidden sm:block tracking-wide">
-                  Autonomous Site & Facility Intelligence
+                  Software Enterprise Quality
                 </span>
               </div>
             </button>
@@ -77,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onScrollTo }) => {
                 className="px-3 py-2 rounded-lg hover:text-white hover:bg-zinc-850/60 transition-colors cursor-pointer flex items-center gap-1.5"
               >
                 <Terminal className="w-3.5 h-3.5 text-violet-400" />
-                Consola en Vivo
+                Consola
               </button>
               <button
                 onClick={() => handleNavClick('bottlenecks')}
@@ -97,7 +97,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onScrollTo }) => {
                 className="px-3 py-2 rounded-lg hover:text-white hover:bg-zinc-850/60 transition-colors cursor-pointer flex items-center gap-1.5"
               >
                 <Building2 className="w-3.5 h-3.5 text-amber-400" />
-                Caso ACG (MBE)
+                Casos de Éxito
               </button>
               <button
                 onClick={() => handleNavClick('pricing')}
@@ -111,20 +111,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onScrollTo }) => {
           {/* Action CTAs */}
           <div className="hidden md:flex items-center gap-3">
             <button
-              onClick={() => onOpenDemo({ intent: 'login_demo' })}
-              className="text-sm font-medium text-zinc-300 hover:text-white px-3 py-2 transition-colors cursor-pointer"
-            >
-              Iniciar Sesión
-            </button>
-            <button
-              onClick={() => onOpenDemo({ company: 'Advance Contractor Group', intent: 'deploy_agent' })}
+              onClick={() => onOpenDemo({ company: 'Software Enterprise Quality', intent: 'deploy_agent' })}
               className="relative group text-sm font-semibold text-white px-4 py-2 rounded-lg bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:shadow-[0_0_30px_rgba(139,92,246,0.6)] transition-all flex items-center gap-2 cursor-pointer"
             >
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-300"></span>
               </span>
-              <span>Desplegar Agente</span>
+              <span>Solicitar Demo</span>
               <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </button>
           </div>
@@ -134,7 +128,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onScrollTo }) => {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 focus:outline-none"
-              aria-label="Toggle navigation menu"
+              aria-label="Alternar menú"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -149,59 +143,50 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onScrollTo }) => {
             onClick={() => handleNavClick('platform')}
             className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-zinc-200 hover:bg-zinc-800 font-medium"
           >
-            Plataforma & Arquitectura
+            Plataforma
           </button>
           <button
             onClick={() => handleNavClick('console')}
             className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-zinc-200 hover:bg-zinc-800 font-medium flex items-center gap-2"
           >
             <Terminal className="w-4 h-4 text-violet-400" />
-            Consola de Agentes en Vivo
+            Consola en Vivo
           </button>
           <button
             onClick={() => handleNavClick('bottlenecks')}
             className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-zinc-200 hover:bg-zinc-800 font-medium flex items-center gap-2"
           >
             <Sparkles className="w-4 h-4 text-cyan-400" />
-            Detección de Cuellos de Botella
+            Cuellos de Botella
           </button>
           <button
             onClick={() => handleNavClick('calculator')}
             className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-zinc-200 hover:bg-zinc-800 font-medium"
           >
-            Calculadora de Ahorro & ROI
+            Calculadora ROI
           </button>
           <button
             onClick={() => handleNavClick('case-study')}
             className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-zinc-200 hover:bg-zinc-800 font-medium flex items-center gap-2"
           >
             <Building2 className="w-4 h-4 text-amber-400" />
-            Caso Advance Contractor Group (MBE)
+            Casos de Éxito
           </button>
           <button
             onClick={() => handleNavClick('pricing')}
             className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-zinc-200 hover:bg-zinc-800 font-medium"
           >
-            Planes y Precios
+            Precios
           </button>
           <div className="pt-3 border-t border-zinc-800 flex flex-col gap-2">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                onOpenDemo({ company: 'Advance Contractor Group', intent: 'deploy_agent' });
+                onOpenDemo({ company: 'Software Enterprise Quality', intent: 'deploy_agent' });
               }}
               className="w-full py-2.5 text-center text-sm font-semibold text-white rounded-lg bg-violet-600 hover:bg-violet-500 shadow-md"
             >
-              Desplegar Agente de Obra
-            </button>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenDemo({ intent: 'login_demo' });
-              }}
-              className="w-full py-2 text-center text-sm text-zinc-300 hover:text-white"
-            >
-              Iniciar Sesión
+              Solicitar Demo
             </button>
           </div>
         </div>

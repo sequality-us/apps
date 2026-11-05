@@ -1,6 +1,6 @@
 /**
- * Core business logic and calculations for ConstrucPod AI
- * Tailored for contractors and facility service providers like Advance Contractor Group (ACG)
+ * Core business logic and calculations for ConstrucPod AI by Software Enterprise Quality (SEQ)
+ * Tailored for general contractors and commercial facility service providers
  */
 
 export interface CostCalculatorInputs {
