@@ -83,12 +83,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onScrollTo }) => {
                 Cuellos de Botella
               </button>
               <button
-                onClick={() => handleNavClick('calculator')}
-                className="px-3.5 py-2 rounded-lg hover:text-white hover:bg-zinc-850/60 transition-colors cursor-pointer"
-              >
-                Calculadora ROI
-              </button>
-              <button
                 onClick={() => handleNavClick('case-study')}
                 className="px-3.5 py-2 rounded-lg hover:text-white hover:bg-zinc-850/60 transition-colors cursor-pointer flex items-center gap-1.5"
               >
@@ -154,12 +148,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onScrollTo }) => {
           >
             <Sparkles className="w-4 h-4 text-cyan-400" />
             Cuellos de Botella
-          </button>
-          <button
-            onClick={() => handleNavClick('calculator')}
-            className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-zinc-200 hover:bg-zinc-800 font-medium"
-          >
-            Calculadora ROI
           </button>
           <button
             onClick={() => handleNavClick('case-study')}

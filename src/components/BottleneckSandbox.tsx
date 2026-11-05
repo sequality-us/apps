@@ -12,7 +12,7 @@ import {
   Zap,
   Check
 } from 'lucide-react';
-import { BottleneckAlert, evaluateProjectHealth } from '../utils/calculator';
+import { BottleneckAlert, evaluateProjectHealth } from '../utils/health';
 
 interface BottleneckSandboxProps {
   onOpenReportModal: (projectName: string) => void;

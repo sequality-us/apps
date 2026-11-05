@@ -172,7 +172,7 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
               <span>Consola en Tiempo Real · By SEQ</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-              Control de Obras y Telemetría
+              Control y Monitoreo de Obras
             </h2>
             <p className="text-zinc-400 text-sm sm:text-base mt-2 max-w-xl">
               Supervisión de cuadrillas, detección de retrasos y bitácoras automáticas.
@@ -272,7 +272,7 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
             </div>
           </div>
 
-          {/* Right: Telemetry, Hologram & Logs */}
+          {/* Right: Status, Hologram & Logs */}
           <div className="lg:col-span-8 p-5 sm:p-7 flex flex-col justify-between bg-[#0B0D14]">
             <div>
               <div className="flex flex-wrap items-center justify-between gap-3 pb-5 border-b border-zinc-800">
@@ -355,7 +355,7 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({
                 <div className="flex items-center justify-between text-[11px] text-zinc-500 pb-2 mb-3 border-b border-zinc-850">
                   <div className="flex items-center gap-2">
                     <Terminal className="w-3.5 h-3.5 text-violet-400" />
-                    <span>TELEMETRÍA STREAM · By SEQ</span>
+                    <span>LOGS EN VIVO · By SEQ</span>
                   </div>
                   <span className="text-zinc-600">En tiempo real</span>
                 </div>

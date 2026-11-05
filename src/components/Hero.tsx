@@ -36,8 +36,8 @@ agent = SiteAgent.deploy(
     auto_daily_report=True
 )
 print(f"Agente activo: {agent.endpoint}")`,
-    api: `// Telemetría con Procore, Autodesk & BIM
-POST https://api.seq.io/v1/telemetry
+    api: `// Sincronización con Procore, Autodesk & BIM
+POST https://api.seq.io/v1/sync
 Headers: { "Authorization": "Bearer seq_live_99a82f..." }
 Payload: {
   "site_id": "SEQ-2026",
@@ -82,7 +82,7 @@ Payload: {
 
           {/* Subtitle */}
           <p className="text-lg sm:text-xl text-zinc-300 max-w-2xl mx-auto leading-relaxed mb-12 font-normal">
-            Supervisión autónoma en tiempo real, prevención predictiva de retrasos y telemetría de campo sin fricción.
+            Supervisión autónoma en tiempo real, detección predictiva de retrasos y reportes automáticos.
           </p>
 
           {/* CTAs */}
@@ -121,7 +121,7 @@ Payload: {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D14] via-[#0B0D14]/30 to-transparent" />
               
-              {/* Telemetry Overlays */}
+              {/* Status Overlays */}
               <div className="absolute top-4 left-4 flex flex-wrap items-center gap-2">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-black/75 backdrop-blur-md border border-violet-500/40 text-[11px] font-mono text-violet-300">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -135,7 +135,7 @@ Payload: {
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono text-zinc-300 bg-black/60 backdrop-blur-md p-3 rounded-xl border border-zinc-800/80">
                 <div className="flex items-center gap-2">
                   <Activity className="w-4 h-4 text-cyan-400 animate-pulse" />
-                  <span>Telemetría en Vivo: Torre Biscayne</span>
+                  <span>Monitoreo en Vivo: Torre Biscayne</span>
                 </div>
                 <span className="text-emerald-400 font-semibold">100% OPERATIVO</span>
               </div>

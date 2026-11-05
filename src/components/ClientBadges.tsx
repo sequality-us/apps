@@ -33,7 +33,7 @@ export const ClientBadges: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-xs sm:text-sm text-zinc-400 mt-1 max-w-xl leading-relaxed">
-                  Digitalización integral de obras, mantenimiento de infraestructura y telemetría de operaciones en campo.
+                  Digitalización integral de obras, gestión de infraestructura y control de operaciones en campo.
                 </p>
               </div>
             </div>

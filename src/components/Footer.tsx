@@ -62,12 +62,7 @@ export const Footer: React.FC<FooterProps> = ({ onScrollTo, onOpenDemo }) => {
               </li>
               <li>
                 <button onClick={() => onScrollTo('console')} className="hover:text-white transition-colors cursor-pointer">
-                  Consola de Telemetría
-                </button>
-              </li>
-              <li>
-                <button onClick={() => onScrollTo('calculator')} className="hover:text-white transition-colors cursor-pointer">
-                  Calculadora ROI
+                  Consola en Vivo
                 </button>
               </li>
             </ul>

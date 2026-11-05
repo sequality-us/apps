@@ -7,7 +7,6 @@ import { ClientBadges } from './components/ClientBadges';
 import { InteractiveConsole } from './components/InteractiveConsole';
 import { ProductPods } from './components/ProductPods';
 import { BottleneckSandbox } from './components/BottleneckSandbox';
-import { RoiCalculator } from './components/RoiCalculator';
 import { CustomerSpotlight } from './components/CustomerSpotlight';
 import { ComparisonTable } from './components/ComparisonTable';
 import { PricingSection } from './components/PricingSection';
@@ -74,11 +73,6 @@ export default function App() {
         {/* Interactive Bottleneck Detection & Mitigation Sandbox */}
         <BottleneckSandbox 
           onOpenReportModal={handleOpenReportModal}
-          onOpenDemo={handleOpenDemo}
-        />
-
-        {/* Interactive ROI & Capacity Calculator */}
-        <RoiCalculator 
           onOpenDemo={handleOpenDemo}
         />
 

@@ -24,3 +24,4 @@ yarn-error.log*
 
 # Next.js types
 next-env.d.ts
+.vercel
